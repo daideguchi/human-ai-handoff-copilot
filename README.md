@@ -4,6 +4,8 @@ Human-AI Handoff Copilot is a Microsoft Agent Academy prototype for moving work 
 
 The strongest agents are not the ones that pretend to finish everything alone. They are the ones that know when to hand off, what to preserve, and how a human can safely resume.
 
+Submission package: [SUBMISSION_PACKAGE.md](SUBMISSION_PACKAGE.md)
+
 ## Demo
 
 ![Human-AI Handoff Copilot architecture](microsoft-agent-academy/media/handoff-copilot-architecture-full.png)
