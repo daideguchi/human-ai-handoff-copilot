@@ -6,6 +6,8 @@ The strongest agents are not the ones that pretend to finish everything alone. T
 
 Submission package: [SUBMISSION_PACKAGE.md](SUBMISSION_PACKAGE.md)
 
+Live demo: https://daideguchi.github.io/human-ai-handoff-copilot/
+
 ## Demo
 
 ![Human-AI Handoff Copilot architecture](microsoft-agent-academy/media/handoff-copilot-architecture-full.png)
@@ -20,6 +22,10 @@ Open locally:
 
 - `microsoft-agent-academy/prototype/handoff-copilot-architecture.html`
 - `shared-agentops-engine/web/index.html`
+
+Open in browser:
+
+- https://daideguchi.github.io/human-ai-handoff-copilot/
 
 ## What It Shows
 

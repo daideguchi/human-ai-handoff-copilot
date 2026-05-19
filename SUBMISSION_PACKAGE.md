@@ -12,9 +12,13 @@ A Copilot-style workflow for handing work between humans and AI agents without l
 
 https://github.com/daideguchi/human-ai-handoff-copilot
 
+## Live Demo
+
+https://daideguchi.github.io/human-ai-handoff-copilot/
+
 ## Try It Out
 
-Open these local demo files after cloning the repository:
+Open the live demo or these local demo files after cloning the repository:
 
 - `microsoft-agent-academy/prototype/handoff-copilot-architecture.html`
 - `shared-agentops-engine/web/index.html`
