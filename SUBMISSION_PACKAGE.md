@@ -24,6 +24,19 @@ Open these local demo files after cloning the repository:
 - `microsoft-agent-academy/media/handoff-copilot-architecture-full.png`
 - `shared-agentops-engine/media/shared-dashboard-full.png`
 
+## Demo Video
+
+Draft silent video:
+
+- `microsoft-agent-academy/media/human-ai-handoff-copilot-demo-draft.mp4`
+
+Regenerate:
+
+```bash
+cd microsoft-agent-academy
+bash scripts/build_demo_video.sh
+```
+
 ## Inspiration
 
 The strongest agents are not the ones that pretend to finish everything alone.
@@ -76,6 +89,7 @@ python3 scripts/verify_artifacts.py
 ```bash
 cd ../microsoft-agent-academy
 python3 scripts/build_handoff_copilot_architecture.py
+bash scripts/build_demo_video.sh
 ```
 
 ## Demo Script Summary

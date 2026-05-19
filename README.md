@@ -10,6 +10,12 @@ Submission package: [SUBMISSION_PACKAGE.md](SUBMISSION_PACKAGE.md)
 
 ![Human-AI Handoff Copilot architecture](microsoft-agent-academy/media/handoff-copilot-architecture-full.png)
 
+Draft demo video:
+
+```text
+microsoft-agent-academy/media/human-ai-handoff-copilot-demo-draft.mp4
+```
+
 Open locally:
 
 - `microsoft-agent-academy/prototype/handoff-copilot-architecture.html`
@@ -34,6 +40,7 @@ python3 scripts/verify_artifacts.py
 ```bash
 cd ../microsoft-agent-academy
 python3 scripts/build_handoff_copilot_architecture.py
+bash scripts/build_demo_video.sh
 ```
 
 Expected proof:
