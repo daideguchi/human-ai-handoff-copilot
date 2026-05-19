@@ -1,0 +1,308 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Human-AI Handoff Copilot — Microsoft Agent Academy Demo</title>
+  <style>
+    :root {
+      --bg: #f5f7fb;
+      --surface: #fff;
+      --ink: #1f2937;
+      --muted: #667085;
+      --line: #d8e0ea;
+      --blue: #2563eb;
+      --blue-soft: #eaf0ff;
+      --purple: #6941c6;
+      --purple-soft: #f1ecff;
+      --green: #0b8043;
+      --green-soft: #e8f5ec;
+      --shadow: 0 16px 36px rgba(31, 41, 55, 0.08);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.5;
+    }
+
+    main {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 28px 18px 48px;
+    }
+
+    .locator {
+      color: var(--muted);
+      font-size: 13px;
+      margin-bottom: 12px;
+    }
+
+    .hero {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 28px;
+      box-shadow: var(--shadow);
+      display: grid;
+      grid-template-columns: minmax(0, 1.25fr) minmax(280px, 0.75fr);
+      gap: 24px;
+      align-items: start;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 34px;
+      line-height: 1.12;
+      letter-spacing: 0;
+    }
+
+    h2 {
+      margin: 0 0 12px;
+      font-size: 20px;
+      letter-spacing: 0;
+    }
+
+    h3 {
+      margin: 10px 0 6px;
+      font-size: 16px;
+      letter-spacing: 0;
+    }
+
+    p { margin: 0; }
+
+    .hero-copy {
+      margin-top: 14px;
+      color: var(--muted);
+      font-size: 16px;
+      max-width: 760px;
+    }
+
+    .handoff-card {
+      background: var(--blue-soft);
+      border: 1px solid #bfd0ff;
+      border-radius: 8px;
+      padding: 16px;
+    }
+
+    .handoff-card strong {
+      color: #174ea6;
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    .metrics {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 22px;
+    }
+
+    .metric,
+    .section,
+    .flow-card {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      box-shadow: 0 8px 24px rgba(31, 41, 55, 0.04);
+    }
+
+    .metric {
+      padding: 16px;
+      min-height: 108px;
+    }
+
+    .metric strong {
+      display: block;
+      font-size: 28px;
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+
+    .metric span {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .section {
+      margin-top: 22px;
+      padding: 20px;
+    }
+
+    .component-grid {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 10px;
+    }
+
+    .component {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 14px;
+      background: #fff;
+      min-height: 116px;
+    }
+
+    .component strong {
+      display: block;
+      margin-bottom: 6px;
+    }
+
+    .component span {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .flow-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .flow-card {
+      padding: 16px;
+      min-height: 184px;
+    }
+
+    .step,
+    .event-id {
+      font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+      color: var(--blue);
+      font-size: 12px;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    .decision {
+      background: var(--green-soft);
+      border: 1px solid #a7ddbd;
+      border-radius: 8px;
+      padding: 16px;
+      color: #0b3d24;
+    }
+
+    @media (max-width: 920px) {
+      .hero,
+      .metrics,
+      .component-grid,
+      .flow-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 620px) {
+      main { padding: 16px 12px 32px; }
+      h1 { font-size: 27px; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="locator">Microsoft Agent Academy · Human-AI Handoff Copilot · Demo Artifact</div>
+
+    <section class="hero">
+      <div>
+        <h1>Agents should know when to hand off, what to preserve, and how humans can resume.</h1>
+        <p class="hero-copy">
+          Human-AI Handoff Copilot packages a support workflow into a Copilot-style architecture:
+          retrieve evidence, draft carefully, evaluate cost/risk, ask for approval, then preserve the handoff trail.
+        </p>
+      </div>
+      <aside class="handoff-card">
+        <strong>Final submission boundary</strong>
+        <p>The GitHub issue submission route exists, but final submission must remain blocked until DD approves the finished artifact.</p>
+      </aside>
+    </section>
+
+    <section class="metrics">
+      <div class="metric"><strong>7</strong><span>handoff events</span></div>
+      <div class="metric"><strong>1</strong><span>human approval checkpoint</span></div>
+      <div class="metric"><strong>3</strong><span>tool/agent context sources</span></div>
+      <div class="metric"><strong>0</strong><span>final submission actions executed</span></div>
+    </section>
+
+    <section class="section">
+      <h2>Copilot Architecture Components</h2>
+      <div class="component-grid">
+        <article class="component"><strong>Conversational intake</strong><span>Support manager asks for help with a customer issue.</span></article>
+        <article class="component"><strong>Policy retrieval</strong><span>Approved source material is fetched before drafting.</span></article>
+        <article class="component"><strong>Drafting agent</strong><span>The answer cites the retrieved policy evidence.</span></article>
+        <article class="component"><strong>Approval card</strong><span>Human approves escalation-only model usage.</span></article>
+        <article class="component"><strong>Handoff report</strong><span>Event IDs survive after the conversation ends.</span></article>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Handoff Flow</h2>
+      <div class="flow-grid">
+            <article class="flow-card">
+              <span class="step">01</span>
+              <h3>Intake</h3>
+              <p>Support manager requested an agent that answers customer questions and escalates uncertain cases.</p>
+              <span class="event-id">evt-0020</span>
+            </article>
+            
+
+            <article class="flow-card">
+              <span class="step">02</span>
+              <h3>Planning</h3>
+              <p>Agent created a workflow plan using retrieval, MCP tools, cost guardrails, and human escalation.</p>
+              <span class="event-id">evt-0021</span>
+            </article>
+            
+
+            <article class="flow-card">
+              <span class="step">03</span>
+              <h3>Evidence Collection</h3>
+              <p>MCP retrieval returned the current refund policy and source URL for citation.</p>
+              <span class="event-id">evt-0022</span>
+            </article>
+            
+
+            <article class="flow-card">
+              <span class="step">04</span>
+              <h3>Execution</h3>
+              <p>Agent drafted a customer answer grounded in the retrieved refund policy.</p>
+              <span class="event-id">evt-0023</span>
+            </article>
+            
+
+            <article class="flow-card">
+              <span class="step">05</span>
+              <h3>Risk Review</h3>
+              <p>Cost guardrail warned that the high-quality model should be reserved for escalations.</p>
+              <span class="event-id">evt-0024</span>
+            </article>
+            
+
+            <article class="flow-card">
+              <span class="step">06</span>
+              <h3>Approval</h3>
+              <p>Human approved the workflow with a rule that expensive model calls are escalation-only.</p>
+              <span class="event-id">evt-0025</span>
+            </article>
+            
+
+            <article class="flow-card">
+              <span class="step">07</span>
+              <h3>Handoff</h3>
+              <p>Closed cloud-agent workflow case with source citations, cost guardrail, and human approval captured.</p>
+              <span class="event-id">evt-0026</span>
+            </article>
+            </div>
+    </section>
+
+    <section class="section">
+      <h2>Human Approval Decision</h2>
+      <div class="decision">
+        <strong>evt-0025 · support-manager approved escalation-only model usage</strong>
+        <p>Costly model calls are not automatic. They become a policy-controlled escalation path.</p>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
