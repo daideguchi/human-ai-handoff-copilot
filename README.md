@@ -12,7 +12,7 @@ The prototype runs a support escalation case, builds a required-field handoff pa
 - **Problem:** AI agents often do useful work, but the moment a human needs to approve, audit, or continue the work, evidence and context get scattered.
 - **Solution:** a handoff packet that preserves the case, evidence IDs, draft response, cost guardrail, blocked action, approval requirement, resume instructions, and packet hash.
 - **Microsoft fit:** Copilot Studio-ready agent instructions/actions/card plus a live Microsoft Graph public service-root contract check for Teams, chats, Planner, drives, and sites.
-- **Honest boundary:** verified local handoff agent and Microsoft integration contract. This repo does not claim live Copilot Studio execution or a final GitHub issue submission yet.
+- **Honest boundary:** verified local handoff agent and Microsoft integration contract. The official final issue form requires confirming use of Copilot Studio, Microsoft 365 Copilot, or Copilot Cowork, so final submission should wait until that product execution/import is verified.
 
 ## Live Links
 
@@ -94,6 +94,7 @@ Safe claim:
 Not claimed:
 
 - Live Copilot Studio import/execution.
+- Confirmed use of Copilot Studio, Microsoft 365 Copilot, or Copilot Cowork inside a live Microsoft environment.
 - Authenticated Microsoft tenant data access.
 - Final GitHub issue submission.
 - Any customer-facing action sent without approval.

@@ -57,4 +57,4 @@ claim_boundary=verified_local_handoff_agent_no_live_copilot_studio_execution_cla
 
 ## Boundary
 
-This is a verified local handoff-agent package with Copilot Studio-ready assets and a live Microsoft Graph service-root contract check. Do not claim live Copilot Studio execution or a GitHub-submitted entry until those routes are separately verified.
+This is a verified local handoff-agent package with Copilot Studio-ready assets and a live Microsoft Graph service-root contract check. The official final issue template requires confirming use of Copilot Studio, Microsoft 365 Copilot, or Copilot Cowork, so do not submit or claim eligibility until one of those product paths is actually verified.

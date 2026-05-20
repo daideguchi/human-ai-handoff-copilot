@@ -127,6 +127,10 @@ The repo includes:
 
 This keeps the submission honest while still proving the Microsoft integration path.
 
+Important final-submit note:
+
+The official GitHub issue form requires the submitter to confirm that the agent uses Copilot Studio, Microsoft 365 Copilot, or Copilot Cowork. This package is ready for review as a local handoff-agent prototype, but final contest submission should wait until one of those product paths is actually verified.
+
 ## Challenges
 
 The hardest part was avoiding the false claim that a local prototype had already run inside a live Copilot Studio tenant.
@@ -167,6 +171,7 @@ Safe claim:
 Not claimed:
 
 - Live Copilot Studio execution.
+- Confirmed use of Copilot Studio, Microsoft 365 Copilot, or Copilot Cowork inside a live Microsoft environment.
 - Authenticated Microsoft tenant or customer data access.
 - Final GitHub issue submission.
 - Customer-facing send without approval.

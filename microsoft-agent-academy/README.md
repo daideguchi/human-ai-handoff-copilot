@@ -8,7 +8,7 @@ A Copilot-style handoff agent that preserves evidence, approvals, cost guardrail
 
 ## Current Status
 
-Submission-ready local package.
+Deep local package. Final GitHub issue submission is blocked until the official Microsoft product-use checkbox can be satisfied honestly.
 
 Verified:
 
@@ -27,6 +27,7 @@ Public demo video:
 Not claimed:
 
 - live Copilot Studio execution
+- confirmed use of Copilot Studio, Microsoft 365 Copilot, or Copilot Cowork inside a live Microsoft environment
 - authenticated tenant/user data access
 - final GitHub issue submission
 
@@ -94,6 +95,11 @@ claim_boundary=verified_local_handoff_agent_no_live_copilot_studio_execution_cla
 - Final GitHub issue route: `https://github.com/microsoft/agent-academy/issues/new?template=hack-submission.yml`
 
 Do not execute the final GitHub issue submission until the finished artifact is approved.
+
+The final issue template requires a checkbox confirming that the agent uses
+Copilot Studio, Microsoft 365 Copilot, or Copilot Cowork. This repo currently
+contains Copilot Studio-ready assets and a Microsoft Graph contract check, but
+does not claim live product execution.
 
 ## Why This Matters
 

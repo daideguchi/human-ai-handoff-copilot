@@ -1,6 +1,6 @@
 # Microsoft Agent Academy Submit Manual
 
-Use this only after DD approves final submission.
+Use this only after DD approves final submission and the Microsoft product-use requirement is verified.
 
 ## Final Links
 
@@ -52,9 +52,19 @@ Safe:
 Do not claim:
 
 - live Copilot Studio execution
+- confirmed use of Copilot Studio, Microsoft 365 Copilot, or Copilot Cowork inside a live Microsoft environment
 - authenticated Microsoft tenant data access
 - final issue submission before this manual is completed
 - customer-facing send without approval
+
+## Required Stopline Before Submit
+
+The official issue template requires a checkbox confirming that the agent uses
+Copilot Studio, Microsoft 365 Copilot, or Copilot Cowork.
+
+Do not submit this GitHub issue while the project is only `Copilot Studio-ready`.
+First verify one live Microsoft product path, then update the README and this
+manual with that proof.
 
 ## Final Submission Route
 

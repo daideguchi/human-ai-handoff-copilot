@@ -353,9 +353,9 @@ def write_issue_draft(workflow: dict[str, Any]) -> None:
     lines.extend(
         [
             "",
-            "## Boundary",
-            "",
-            "This is a verified local handoff-agent package with Copilot Studio-ready assets and a live Microsoft Graph service-root contract check. Do not claim live Copilot Studio execution or a GitHub-submitted entry until those routes are separately verified.",
+        "## Boundary",
+        "",
+        "This is a verified local handoff-agent package with Copilot Studio-ready assets and a live Microsoft Graph service-root contract check. The official final issue template requires confirming use of Copilot Studio, Microsoft 365 Copilot, or Copilot Cowork, so do not submit or claim eligibility until one of those product paths is actually verified.",
         ]
     )
     ISSUE_DRAFT.parent.mkdir(parents=True, exist_ok=True)
