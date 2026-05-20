@@ -1,0 +1,35 @@
+{
+  "case_id": "CASE-M365-HANDOFF-004",
+  "ticket_id": "M365-2187",
+  "target_user": "support team lead",
+  "customer_question": "A customer asks whether a refund exception can be granted after an accidental renewal.",
+  "current_actor": "support-copilot-agent",
+  "next_actor": "human-support-manager",
+  "evidence_ids": [
+    "ticket-m365-2187",
+    "policy-renewal-refund-2026-05",
+    "usage-m365-2187",
+    "draft-m365-2187",
+    "handoff-m365-2187"
+  ],
+  "draft_response": "I found the renewal-refund exception policy. Because the request was opened within the review window and the packaged usage check says no new seats were used, this may qualify for manager review. I cannot promise the refund until a support manager approves it. Evidence: policy-renewal-refund-2026-05, usage-m365-2187.",
+  "approval_required": true,
+  "blocked_action": "send_customer_reply",
+  "cost_summary": {
+    "estimated_agent_cost_usd": 0.019,
+    "expensive_model_allowed": "only_after_human_approval"
+  },
+  "resume_instructions": [
+    "Read the evidence IDs before deciding.",
+    "Approve only if the policy source and usage check are sufficient.",
+    "If approved, send the draft after removing internal evidence labels.",
+    "If not approved, request more evidence from the agent."
+  ],
+  "copilot_studio_assets": [
+    "copilot_studio/agent-instructions.md",
+    "copilot_studio/actions.json",
+    "copilot_studio/adaptive-card-handoff.json"
+  ],
+  "claim_boundary": "verified_local_handoff_agent_no_live_copilot_studio_execution_claim",
+  "packet_sha256": "604017d835dd6c9fa505c7cf8cd50dbe9a2b0c7dbaf9f173e4cd7846a17d85ec"
+}

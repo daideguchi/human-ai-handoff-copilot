@@ -1,0 +1,39 @@
+{
+  "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+  "type": "AdaptiveCard",
+  "version": "1.5",
+  "body": [
+    {
+      "type": "TextBlock",
+      "text": "Human-AI Handoff Approval",
+      "weight": "Bolder",
+      "size": "Medium"
+    },
+    {
+      "type": "TextBlock",
+      "text": "The agent drafted a customer-facing financial reply. Review the evidence before approving send.",
+      "wrap": true
+    },
+    {
+      "type": "FactSet",
+      "facts": [
+        { "title": "Case", "value": "${case_id}" },
+        { "title": "Ticket", "value": "${ticket_id}" },
+        { "title": "Evidence", "value": "${evidence_ids}" },
+        { "title": "Blocked action", "value": "${blocked_action}" }
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "type": "Action.Submit",
+      "title": "Approve handoff",
+      "data": { "decision": "approved" }
+    },
+    {
+      "type": "Action.Submit",
+      "title": "Request more evidence",
+      "data": { "decision": "needs_more_evidence" }
+    }
+  ]
+}

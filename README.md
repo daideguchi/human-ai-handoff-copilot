@@ -1,74 +1,99 @@
 # Human-AI Handoff Copilot
 
-Human-AI Handoff Copilot is a Microsoft Agent Academy prototype for moving work between humans and AI agents without losing context, approvals, or evidence.
+Human-AI Handoff Copilot is a Microsoft Agent Academy submission package for one practical problem:
 
-The strongest agents are not the ones that pretend to finish everything alone. They are the ones that know when to hand off, what to preserve, and how a human can safely resume.
+> When an AI agent cannot safely finish a task alone, how does the next human or AI continue without losing context?
 
-Submission package: [SUBMISSION_PACKAGE.md](SUBMISSION_PACKAGE.md)
+The prototype runs a support escalation case, builds a required-field handoff packet, blocks the risky customer-facing action, verifies that the next actor can resume, and packages the workflow as Copilot Studio-ready instructions, action contracts, and an Adaptive Card.
 
-Live demo: https://daideguchi.github.io/human-ai-handoff-copilot/
+## Judge Quick Read
+
+- **Who it helps:** support leads, operations managers, and future agent supervisors who need AI work to pause cleanly instead of disappearing into chat history.
+- **Problem:** AI agents often do useful work, but the moment a human needs to approve, audit, or continue the work, evidence and context get scattered.
+- **Solution:** a handoff packet that preserves the case, evidence IDs, draft response, cost guardrail, blocked action, approval requirement, resume instructions, and packet hash.
+- **Microsoft fit:** Copilot Studio-ready agent instructions/actions/card plus a live Microsoft Graph public service-root contract check for Teams, chats, Planner, drives, and sites.
+- **Honest boundary:** verified local handoff agent and Microsoft integration contract. This repo does not claim live Copilot Studio execution or a final GitHub issue submission yet.
+
+## Live Links
+
+- Live demo: https://daideguchi.github.io/human-ai-handoff-copilot/
+- GitHub: https://github.com/daideguchi/human-ai-handoff-copilot
+- YouTube demo: https://www.youtube.com/watch?v=asbgvArrqXU
+- Submission package: [SUBMISSION_PACKAGE.md](SUBMISSION_PACKAGE.md)
+- Architecture: [ARCHITECTURE.md](ARCHITECTURE.md)
+- Demo video file: [microsoft-agent-academy/media/human-ai-handoff-copilot-demo.mp4](microsoft-agent-academy/media/human-ai-handoff-copilot-demo.mp4)
 
 ## Demo
 
 ![Human-AI Handoff Copilot architecture](microsoft-agent-academy/media/handoff-copilot-architecture-full.png)
 
-Draft demo video:
+The demo video has natural English narration and is generated from the current verified artifacts.
 
 ```text
-microsoft-agent-academy/media/human-ai-handoff-copilot-demo-draft.mp4
+YouTube: https://www.youtube.com/watch?v=asbgvArrqXU
+microsoft-agent-academy/media/human-ai-handoff-copilot-demo.mp4
 ```
 
-Open locally:
+## What Is Working
 
-- `microsoft-agent-academy/prototype/handoff-copilot-architecture.html`
-- `shared-agentops-engine/web/index.html`
+- A local handoff agent produces `handoff-packet.json`.
+- Required handoff fields are validated at 100%.
+- The customer-facing send is blocked until manager approval.
+- A resume proof confirms the next actor can continue.
+- Microsoft Graph service root is checked live without reading tenant/user data.
+- Copilot Studio-ready instructions, action contracts, and Adaptive Card assets are included.
+- The demo video, screenshots, and reports are generated from the repo.
 
-Open in browser:
+## Verification
 
-- https://daideguchi.github.io/human-ai-handoff-copilot/
-
-## What It Shows
-
-- Handoff-first workflow architecture
-- Evidence and context preserved across the handoff
-- Approval points before risky action
-- GitHub issue submission draft
-- Shared AgentOps event trail
-
-## Run Locally
+Run the full Microsoft lane check:
 
 ```bash
-cd shared-agentops-engine
-python3 scripts/generate_portfolio_artifacts.py
-python3 scripts/verify_artifacts.py
-```
-
-```bash
-cd ../microsoft-agent-academy
-python3 scripts/build_handoff_copilot_architecture.py
-bash scripts/build_demo_video.sh
+bash microsoft-agent-academy/scripts/run_microsoft_local_checks.sh
 ```
 
 Expected proof:
 
 ```text
-verify_ok
-status: ok
+microsoft_local_checks_ok
+required_fields=9
+handoff_completeness=1.0
+resumable_by_next_actor=True
+approval_required=true
+microsoft_graph_contract=ok
+video_seconds=74.7
+claim_boundary=verified_local_handoff_agent_no_live_copilot_studio_execution_claim
 ```
 
-## Hackathon Boundary
+## Key Files
+
+- [microsoft-agent-academy/scripts/run_handoff_copilot.py](microsoft-agent-academy/scripts/run_handoff_copilot.py) - local handoff agent runner
+- [microsoft-agent-academy/scripts/check_microsoft_graph_contract.py](microsoft-agent-academy/scripts/check_microsoft_graph_contract.py) - live Microsoft Graph service-root check
+- [microsoft-agent-academy/reports/handoff-packet.json](microsoft-agent-academy/reports/handoff-packet.json) - the generated handoff packet
+- [microsoft-agent-academy/reports/resume-proof.json](microsoft-agent-academy/reports/resume-proof.json) - resumability proof
+- [microsoft-agent-academy/reports/microsoft-graph-contract.json](microsoft-agent-academy/reports/microsoft-graph-contract.json) - Microsoft Graph contract proof
+- [microsoft-agent-academy/copilot_studio/agent-instructions.md](microsoft-agent-academy/copilot_studio/agent-instructions.md) - Copilot Studio behavior draft
+- [microsoft-agent-academy/copilot_studio/actions.json](microsoft-agent-academy/copilot_studio/actions.json) - action contracts
+- [microsoft-agent-academy/copilot_studio/adaptive-card-handoff.json](microsoft-agent-academy/copilot_studio/adaptive-card-handoff.json) - manager approval card
+
+## Story
+
+Human-AI collaboration should not mean "AI does everything" or "humans restart from zero." The real future is handoff: humans and agents working in the same flow, with enough evidence and responsibility preserved that either side can continue safely.
+
+That is why this project treats handoff as an agent capability, not a side note.
+
+## Claim Boundary
 
 Safe claim:
 
-- A local Copilot-style handoff architecture, screenshot, and GitHub issue draft are generated.
+- Verified local handoff agent.
+- Copilot Studio-ready implementation assets.
+- Live Microsoft Graph service-root contract check.
+- Natural-English demo video and public GitHub Pages demo.
 
-Not claimed yet:
+Not claimed:
 
-- Live Copilot Studio implementation.
+- Live Copilot Studio import/execution.
+- Authenticated Microsoft tenant data access.
 - Final GitHub issue submission.
-- Acceptance of any platform terms on behalf of the user.
-
-## Project Layout
-
-- `microsoft-agent-academy/` - Microsoft-focused prototype, screenshot, and issue draft
-- `shared-agentops-engine/` - shared event stream, adapters, dashboard, and verifier
+- Any customer-facing action sent without approval.

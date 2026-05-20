@@ -1,0 +1,5 @@
+{"event_id":"ms-evt-001","actor":"customer","event":"ticket_opened","summary":"Customer asks for refund exception after accidental renewal.","evidence_id":"ticket-m365-2187"}
+{"event_id":"ms-evt-002","actor":"support-copilot-agent","event":"policy_retrieved","summary":"Agent retrieved renewal refund exception policy.","evidence_id":"policy-renewal-refund-2026-05"}
+{"event_id":"ms-evt-003","actor":"support-copilot-agent","event":"usage_checked","summary":"Packaged case says no new seats were used after renewal.","evidence_id":"usage-m365-2187"}
+{"event_id":"ms-evt-004","actor":"support-copilot-agent","event":"draft_created","summary":"Agent drafted a response that cites policy and avoids promising refund approval.","evidence_id":"draft-m365-2187"}
+{"event_id":"ms-evt-005","actor":"support-copilot-agent","event":"handoff_required","summary":"Agent blocked customer-facing send and created a manager handoff packet.","evidence_id":"handoff-m365-2187"}

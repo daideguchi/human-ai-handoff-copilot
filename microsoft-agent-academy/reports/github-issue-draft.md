@@ -12,9 +12,38 @@ A Copilot-style workflow for moving support operations between AI agents and hum
 
 ## Current Artifacts
 
+- Live demo: `https://daideguchi.github.io/human-ai-handoff-copilot/`
+- YouTube demo: `https://www.youtube.com/watch?v=asbgvArrqXU`
+- Repository: `https://github.com/daideguchi/human-ai-handoff-copilot`
 - `prototype/handoff-copilot-architecture.html`
+- `prototype/terminal-session.html`
+- `reports/handoff-packet.json`
+- `reports/resume-proof.json`
+- `reports/handoff-quality-report.md`
+- `reports/microsoft-graph-contract.json`
 - `media/handoff-copilot-architecture-full.png`
+- `media/handoff-terminal-session-full.png`
+- `media/human-ai-handoff-copilot-demo.mp4`
+- `copilot_studio/agent-instructions.md`
+- `copilot_studio/actions.json`
+- `copilot_studio/adaptive-card-handoff.json`
 - `../shared-agentops-engine/adapters/microsoft/copilot_architecture.md`
+
+## Verification
+
+```bash
+bash microsoft-agent-academy/scripts/run_microsoft_local_checks.sh
+```
+
+Expected proof:
+
+```text
+microsoft_local_checks_ok
+handoff_completeness=1.0
+resumable_by_next_actor=True
+microsoft_graph_contract=ok
+claim_boundary=verified_local_handoff_agent_no_live_copilot_studio_execution_claim
+```
 
 ## Evidence Events
 
@@ -28,4 +57,4 @@ A Copilot-style workflow for moving support operations between AI agents and hum
 
 ## Boundary
 
-This is an architecture/local prototype package. Do not claim a live Copilot Studio or GitHub-submitted entry until verified.
+This is a verified local handoff-agent package with Copilot Studio-ready assets and a live Microsoft Graph service-root contract check. Do not claim live Copilot Studio execution or a GitHub-submitted entry until those routes are separately verified.

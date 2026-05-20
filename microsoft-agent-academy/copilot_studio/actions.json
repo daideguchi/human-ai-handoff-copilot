@@ -1,0 +1,25 @@
+{
+  "actions": [
+    {
+      "name": "create_handoff_packet",
+      "product_target": "Copilot Studio custom action",
+      "input": ["case_id", "ticket_id", "customer_question", "evidence_ids", "draft_response", "cost_summary"],
+      "output": "handoff_packet",
+      "requires_approval": false
+    },
+    {
+      "name": "request_manager_approval",
+      "product_target": "Copilot Studio adaptive card approval",
+      "input": ["handoff_packet"],
+      "output": "approval_decision",
+      "requires_approval": true
+    },
+    {
+      "name": "send_customer_reply",
+      "product_target": "M365/Copilot action placeholder",
+      "input": ["approved_handoff_packet"],
+      "output": "customer_reply_sent",
+      "requires_approval": true
+    }
+  ]
+}

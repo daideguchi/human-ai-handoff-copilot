@@ -263,7 +263,7 @@ def build_html(workflow: dict[str, Any]) -> str:
     <section class="metrics">
       <div class="metric"><strong>{len(events)}</strong><span>handoff events</span></div>
       <div class="metric"><strong>1</strong><span>human approval checkpoint</span></div>
-      <div class="metric"><strong>3</strong><span>tool/agent context sources</span></div>
+      <div class="metric"><strong>Graph</strong><span>Microsoft product contract checked live</span></div>
       <div class="metric"><strong>0</strong><span>final submission actions executed</span></div>
     </section>
 
@@ -274,7 +274,7 @@ def build_html(workflow: dict[str, Any]) -> str:
         <article class="component"><strong>Policy retrieval</strong><span>Approved source material is fetched before drafting.</span></article>
         <article class="component"><strong>Drafting agent</strong><span>The answer cites the retrieved policy evidence.</span></article>
         <article class="component"><strong>Approval card</strong><span>Human approves escalation-only model usage.</span></article>
-        <article class="component"><strong>Handoff report</strong><span>Event IDs survive after the conversation ends.</span></article>
+        <article class="component"><strong>Microsoft Graph contract</strong><span>Teams, chats, Planner, drives, and sites are validated against the public Graph service root.</span></article>
       </div>
     </section>
 
@@ -312,9 +312,38 @@ def write_issue_draft(workflow: dict[str, Any]) -> None:
         "",
         "## Current Artifacts",
         "",
+        "- Live demo: `https://daideguchi.github.io/human-ai-handoff-copilot/`",
+        "- YouTube demo: `https://www.youtube.com/watch?v=asbgvArrqXU`",
+        "- Repository: `https://github.com/daideguchi/human-ai-handoff-copilot`",
         "- `prototype/handoff-copilot-architecture.html`",
+        "- `prototype/terminal-session.html`",
+        "- `reports/handoff-packet.json`",
+        "- `reports/resume-proof.json`",
+        "- `reports/handoff-quality-report.md`",
+        "- `reports/microsoft-graph-contract.json`",
         "- `media/handoff-copilot-architecture-full.png`",
+        "- `media/handoff-terminal-session-full.png`",
+        "- `media/human-ai-handoff-copilot-demo.mp4`",
+        "- `copilot_studio/agent-instructions.md`",
+        "- `copilot_studio/actions.json`",
+        "- `copilot_studio/adaptive-card-handoff.json`",
         "- `../shared-agentops-engine/adapters/microsoft/copilot_architecture.md`",
+        "",
+        "## Verification",
+        "",
+        "```bash",
+        "bash microsoft-agent-academy/scripts/run_microsoft_local_checks.sh",
+        "```",
+        "",
+        "Expected proof:",
+        "",
+        "```text",
+        "microsoft_local_checks_ok",
+        "handoff_completeness=1.0",
+        "resumable_by_next_actor=True",
+        "microsoft_graph_contract=ok",
+        "claim_boundary=verified_local_handoff_agent_no_live_copilot_studio_execution_claim",
+        "```",
         "",
         "## Evidence Events",
         "",
@@ -326,7 +355,7 @@ def write_issue_draft(workflow: dict[str, Any]) -> None:
             "",
             "## Boundary",
             "",
-            "This is an architecture/local prototype package. Do not claim a live Copilot Studio or GitHub-submitted entry until verified.",
+            "This is a verified local handoff-agent package with Copilot Studio-ready assets and a live Microsoft Graph service-root contract check. Do not claim live Copilot Studio execution or a GitHub-submitted entry until those routes are separately verified.",
         ]
     )
     ISSUE_DRAFT.parent.mkdir(parents=True, exist_ok=True)

@@ -1,93 +1,100 @@
-# Human-AI Handoff Copilot
+# Microsoft Agent Academy Lane
 
-Target: Microsoft Agent Academy Hackathon
+This folder contains the Microsoft-focused implementation for **Human-AI Handoff Copilot**.
 
-URL: https://microsoft.github.io/agent-academy/events/hackathon/
+## One Sentence
 
-Status: registration route checked. Not a standard Devpost join flow. Final GitHub issue submission is blocked until build and DD approval.
+A Copilot-style handoff agent that preserves evidence, approvals, cost guardrails, blocked actions, and resume instructions when work moves from AI to a human manager or another AI.
 
-Current local proof:
+## Current Status
 
-- Handoff architecture demo: `prototype/handoff-copilot-architecture.html`
-- Demo screenshot: `media/handoff-copilot-architecture-full.png`
-- GitHub issue draft: `reports/github-issue-draft.md`
-- Builder: `scripts/build_handoff_copilot_architecture.py`
+Submission-ready local package.
 
-![Human-AI Handoff Copilot architecture](media/handoff-copilot-architecture-full.png)
+Verified:
 
-## Position
+- local handoff agent runs
+- required handoff fields are present
+- customer-facing send stays blocked until approval
+- next actor can resume from the packet
+- Microsoft Graph public service-root contract is checked live
+- Copilot Studio-ready instructions/actions/card exist
+- natural English demo video is generated
 
-P3 opportunistic lane.
+Public demo video:
 
-Deadline is early, so this should only proceed if Microsoft platform access is already available or fast.
+- https://www.youtube.com/watch?v=asbgvArrqXU
 
-## Product Thesis
+Not claimed:
 
-The strongest enterprise agents are not the ones that do everything alone.
+- live Copilot Studio execution
+- authenticated tenant/user data access
+- final GitHub issue submission
 
-They are the ones that know when to hand off to a human, what context to preserve, and how to resume safely.
+## Run
 
-Human-AI Handoff Copilot helps teams move work between AI agents and humans without losing context, approvals, or evidence.
-
-## MVP
-
-- Copilot-style workflow
-- task card
-- approval handoff
-- evidence summary
-- architecture diagram
-- short demo
-
-## Shared Engine Use
-
-Reuse:
-
-- handoff events
-- approval gates
-- evidence summary
-- session timeline
-
-Adapt:
-
-- Microsoft Copilot Studio / M365 Copilot format if access is available
-
-Current generated artifacts:
-
-- Shared engine: `../shared-agentops-engine/`
-- Canonical events: `../shared-agentops-engine/data/agentops_events.jsonl`
-- Copilot architecture: `../shared-agentops-engine/adapters/microsoft/copilot_architecture.md`
-- Google/Microsoft shared cloud-agent case: `CASE-CLOUD-003`
-
-Build the Microsoft-focused local demo:
+From the repo root:
 
 ```bash
-cd /Users/dd/000_AI組織/__hackason/microsoft-agent-academy
-python3 scripts/build_handoff_copilot_architecture.py
+bash microsoft-agent-academy/scripts/run_microsoft_local_checks.sh
 ```
 
 Expected proof:
 
-- builder returns `status: ok`
-- `prototype/handoff-copilot-architecture.html` exists
-- `reports/github-issue-draft.md` exists
-- screenshot exists at `media/handoff-copilot-architecture-full.png`
+```text
+microsoft_local_checks_ok
+required_fields=9
+handoff_completeness=1.0
+resumable_by_next_actor=True
+approval_required=true
+microsoft_graph_contract=ok
+video_seconds=74.7
+claim_boundary=verified_local_handoff_agent_no_live_copilot_studio_execution_claim
+```
 
-Registration/submission routes observed:
+## Core Artifacts
 
-- `Register Now` route: `https://aka.ms/agent-academy-live/register`
+- `scripts/run_handoff_copilot.py` - local handoff agent runner
+- `scripts/check_microsoft_graph_contract.py` - live Microsoft Graph public service-root check
+- `scripts/build_handoff_copilot_architecture.py` - builds the architecture demo and GitHub issue draft
+- `scripts/build_demo_video.sh` - builds the narrated demo video
+- `case_data/support_escalation_case.json` - support case
+- `case_data/policy_source.md` - approved policy source
+- `case_data/agent_worklog.jsonl` - evidence worklog
+- `reports/handoff-packet.json` - generated handoff packet
+- `reports/resume-proof.json` - resumability proof
+- `reports/microsoft-graph-contract.json` - Microsoft Graph contract report
+- `copilot_studio/agent-instructions.md` - Copilot Studio-ready instructions
+- `copilot_studio/actions.json` - action contracts
+- `copilot_studio/adaptive-card-handoff.json` - manager approval card
+
+## Product Flow
+
+1. Customer asks for a refund exception.
+2. Agent retrieves approved policy evidence.
+3. Agent drafts a careful response.
+4. Agent detects that the next action is customer-facing and financial.
+5. Agent blocks `send_customer_reply`.
+6. Agent creates a required-field handoff packet.
+7. Manager or future AI resumes from the packet instead of the raw chat.
+
+## Microsoft Mapping
+
+- **Copilot Studio:** instructions, actions, and Adaptive Card approval shape.
+- **Microsoft Graph:** live service-root contract verifies Teams, chats, Planner, drives, and sites are available as integration surfaces.
+- **Teams:** target channel for manager approval.
+- **Planner:** target for resume task creation.
+- **Drive / SharePoint:** target storage for policy evidence and handoff packets.
+
+## Submission Routes Observed
+
+- Event page: `https://microsoft.github.io/agent-academy/events/hackathon/`
+- Register route: `https://aka.ms/agent-academy-live/register`
 - Reactor event route: `https://developer.microsoft.com/en-us/reactor/events/27042/`
-- `Submit Your Entry` route: `https://aka.ms/agent-academy-hack/submit`
-- Final submission route redirects to GitHub issue creation: `https://github.com/microsoft/agent-academy/issues/new?template=hack-submission.yml`
+- Submit route: `https://aka.ms/agent-academy-hack/submit`
+- Final GitHub issue route: `https://github.com/microsoft/agent-academy/issues/new?template=hack-submission.yml`
 
-Do not execute the final GitHub issue submission until DD approves the finished artifact.
+Do not execute the final GitHub issue submission until the finished artifact is approved.
 
-## Immediate Next Steps
+## Why This Matters
 
-1. Confirm Microsoft product access.
-2. If access is hard, keep this as a pitch/architecture lane only.
-3. Build from the generated Copilot architecture doc if the lane remains active.
-
-Current boundary:
-
-- Safe claim: a Copilot-style handoff architecture and GitHub issue draft are generated locally.
-- Do not execute the GitHub issue submission or claim live Copilot Studio implementation until DD approves and the platform is verified.
+Human-AI work will not be a single actor doing everything. Real operations will involve agents drafting, humans approving, future agents resuming, and teams auditing what happened. This project makes that handoff explicit, verifiable, and reusable.

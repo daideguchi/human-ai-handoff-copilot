@@ -1,0 +1,24 @@
+{
+  "endpoint": "https://graph.microsoft.com/v1.0/",
+  "reachable": true,
+  "contract": "Microsoft Graph v1.0 service root",
+  "validated_entity_sets": [
+    "users",
+    "groups",
+    "teams",
+    "chats",
+    "planner",
+    "drives",
+    "sites"
+  ],
+  "missing_entity_sets": [],
+  "uses_authenticated_tenant_data": false,
+  "handoff_mapping": {
+    "teams": "manager approval can be routed to Teams",
+    "chats": "handoff status can be posted to an operations chat",
+    "planner": "resume task can become a Planner task",
+    "drives": "handoff packet can be stored with evidence",
+    "sites": "policy sources can live in SharePoint"
+  },
+  "boundary": "public service-root contract check only; no tenant/user data read"
+}

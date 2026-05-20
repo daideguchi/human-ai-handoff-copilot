@@ -1,0 +1,10 @@
+{
+  "case_id": "CASE-M365-HANDOFF-004",
+  "required_fields_total": 9,
+  "missing_required_fields": [],
+  "handoff_completeness": 1.0,
+  "resumable_by_next_actor": true,
+  "next_actor": "human-support-manager",
+  "blocked_action": "send_customer_reply",
+  "approval_required": true
+}

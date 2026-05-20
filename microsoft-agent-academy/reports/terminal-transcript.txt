@@ -1,0 +1,21 @@
+$ python3 microsoft-agent-academy/scripts/run_handoff_copilot.py --case CASE-M365-HANDOFF-004
+[case] CASE-M365-HANDOFF-004 / M365-2187
+[mode] Copilot-style handoff: preserve evidence, approval, cost, and resume instructions
+[agent] current=support-copilot-agent next=human-support-manager
+
+[packet] required fields captured:
+         case_id=present
+         ticket_id=present
+         customer_question=present
+         evidence_ids=present
+         draft_response=present
+         approval_required=present
+         blocked_action=present
+         cost_summary=present
+         resume_instructions=present
+
+[quality] handoff_completeness=1.0
+[resume] resumable_by_next_actor=True
+[approval] customer-facing send remains blocked until manager approval
+[hash] packet_sha256=604017d835dd6c9f...
+[boundary] verified local handoff agent; no live Copilot Studio execution claimed
